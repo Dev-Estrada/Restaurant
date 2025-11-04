@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./img/Sidreria.png">
+    <title>Sidreria - El Pasaje - Restaurante</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-stone-50">
+
+    <!-- Cabecera -->
+    <header class="fixed top-0 left-0 right-0 z-50 header-glass">
+        <nav class="container mx-auto px-0 py-0">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <img src="./img/Sidreria.png" alt="Logo El Pasaje" style="background-color: rgba(250, 111, 18, 0.932);" class="h-14 w-auto md:h-16 drop-shadow-md transition-transform duration-300 hover:scale-105">
+                </div>
+
+                <ul class="hidden md:flex space-x-8 text-sm lg:text-base">
+                    <li><a href="#inicio" class="nav-link text-stone-700 hover:text-amber-600">Inicio</a></li>
+                    <li><a href="#sobre-nosotros" class="nav-link text-stone-700 hover:text-amber-600">Sobre Nosotros</a></li>
+                    <li><a href="#menu" class="nav-link text-stone-700 hover:text-amber-600">Carta</a></li>
+                    <li><a href="#ubicacion" class="nav-link text-stone-700 hover:text-amber-600">Ubicación</a></li>
+                    <li><a href="#contacto" class="nav-link text-stone-700 hover:text-amber-600">Contacto</a></li>
+                </ul>
+
+                <button id="mobile-menu-btn" class="md:hidden text-stone-700 text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-3">
+                <a href="#inicio" class="block text-stone-700 hover:text-amber-600 py-2">Inicio</a>
+                <a href="#sobre-nosotros" class="block text-stone-700 hover:text-amber-600 py-2">Sobre Nosotros</a>
+                <a href="#menu" class="block text-stone-700 hover:text-amber-600 py-2">Carta</a>
+                <a href="#ubicacion" class="block text-stone-700 hover:text-amber-600 py-2">Ubicación</a>
+                <a href="#contacto" class="block text-stone-700 hover:text-amber-600 py-2">Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Inicio -->
+    <section id="inicio" class="relative h-screen flex items-center justify-center" style="background: url('./img/Local.jpg') center/cover no-repeat;">
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="relative z-10 text-center text-white px-4">
+            <img src="./img/Sidreria.png" alt="Logo El Pasaje" class="mx-auto mb-6 w-55 md:w-60 drop-shadow-lg">
+            <p class="text-xl md:text-2xl mb-8 font-light">Sidrería Tradicional Asturiana</p>
+            <p class="text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">Sabores auténticos de Asturias en el corazón de Gijón</p>
+            <a href="#menu" class="inline-block bg-amber-600 hover:bg-amber-800 text-white px-8 py-4 rounded-full text-lg font-medium transition-all transform hover:scale-105">
+                Ver Nuestra Carta
+            </a>
+        </div>
+    </section>
+
+    <!-- Sobre Nosotros -->
+    <section id="sobre-nosotros" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-stone-800 mb-6">Sobre Nosotros</h2>
+                <div class="w-24 h-1 bg-amber-600 mx-auto mb-8"></div>
+                <p class="text-lg text-stone-600 leading-relaxed mb-6">
+                    En <strong>El Pasaje</strong>, llevamos la tradición asturiana a tu mesa desde hace generaciones.
+                    Nuestra sidrería es un homenaje a la gastronomía de Asturias, donde cada plato cuenta una historia
+                    y cada escanciado de sidra es un arte.
+                </p>
+                <p class="text-lg text-stone-600 leading-relaxed mb-6">
+                    Ubicados en Gijón, nos enorgullece ofrecer los mejores productos locales: desde nuestro famoso
+                    cachopo hasta la sidra natural que fluye de las mejores pomaradas asturianas. Nuestro compromiso
+                    es con la calidad, la autenticidad y la hospitalidad que nos caracteriza.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                    <div class="p-6 bg-stone-50 rounded-lg">
+                        <i class="fas fa-utensils text-4xl text-amber-600 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Cocina Tradicional</h3>
+                        <p class="text-stone-600">Recetas auténticas transmitidas por generaciones</p>
+                    </div>
+                    <div class="p-6 bg-stone-50 rounded-lg">
+                        <i class="fas fa-wine-glass-alt text-4xl text-amber-600 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Sidra Natural</h3>
+                        <p class="text-stone-600">Selección premium de las mejores sidrerías</p>
+                    </div>
+                    <div class="p-6 bg-stone-50 rounded-lg">
+                        <i class="fas fa-heart text-4xl text-amber-600 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Pasión Asturiana</h3>
+                        <p class="text-stone-600">Amor por la tierra en cada detalle</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menú Interactivo -->
+    <section id="menu" class="py-20 bg-gradient-to-b from-stone-50 to-stone-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-stone-800 mb-6">Nuestra Carta</h2>
+            <div class="w-24 h-1 bg-amber-600 mx-auto mb-8"></div>
+            <p class="text-lg text-stone-600 max-w-2xl mx-auto">
+                Descubre nuestros platos cuidadosamente seleccionados para el disfrute de nuestros comensales
+            </p>
+            </div>
+
+            <!-- GRID DE CATEGORÍAS -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+                <!-- ENTRANTES -->
+                <div class="bg-white/70 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg transition hover:shadow-2xl">
+                    <button onclick="toggleMenu('entrantes')" class="w-full text-left relative">
+                    <img src="https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg?auto=compress&cs=tinysrgb&w=800" class="h-56 w-full object-cover" alt="Entrantes">
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                        <h3 class="text-3xl font-semibold text-white drop-shadow-lg">ENTRANTES</h3>
+                        <i id="icon-entrantes" class="fas fa-chevron-down text-white text-2xl absolute right-6 bottom-4 transition-transform duration-300"></i>
+                    </div>
+                    </button>
+                    <div id="entrantes" class="hidden px-6 py-4 text-stone-800 bg-white/60 backdrop-blur-md">
+                    <ul class="divide-y divide-stone-200">
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Croquetas Artesanas</span><span class="text-amber-600 font-semibold">7.50€</span></div>
+                        <p class="text-stone-500 text-sm">6 Unidades a elegir Jamón Ibérico, Chipirones o Pulpo</p>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Gajos de Patatas Bravas o Braviolis</span><span class="text-amber-600 font-semibold">7.20€</span></div>
+                        <p class="text-stone-500 text-sm">Salsas Caseras</p>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Chorizo a la Sidra</span><span class="text-amber-600 font-semibold">7.80€</span></div>
+                        <p class="text-stone-500 text-sm">Clásica receta con chorizo extra de León</p>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Tortos de Maíz Asturianos</span><span class="text-amber-600 font-semibold">10.50€</span></div>
+                        <p class="text-stone-500 text-sm">Picadillo, huevo, jamón salteado y queso curado de oveja con membrillo de manzana</p>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Solomillos de Pollo Crujientes</span><span class="text-amber-600 font-semibold">9.50€</span></div>
+                        <p class="text-stone-500 text-sm">Tiras de pollo crujientes apanados con panko japon+es</p>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Calamares Fritos a la Romana</span><span class="text-amber-600 font-semibold">13.50€</span></div>
+                        <p class="text-stone-500 text-sm">Amillas de pota rebozado acompañado con lima y alioli suave</p>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Berenejnas a la Cordobesa con Miel</span><span class="text-amber-600 font-semibold">8.50€</span></div>
+                        <p class="text-stone-500 text-sm">(Receta centenaria de la Abuela con miel de flores y miel de caña)</p>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Ensaladilla Rusa Tradicional</span><span class="text-amber-600 font-semibold">8.10€</span></div>
+                        <p class="text-stone-500 text-sm">Pan picos, pimiento piquillo y gambas babys crujiente</p>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Gambones a la Parrilla</span><span class="text-amber-600 font-semibold">12.70€</span></div>
+                        <p class="text-stone-500 text-sm">7 unidades de Gambones L1 en Aove de ajillo</p>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Parrillada de Verduras</span><span class="text-amber-600 font-semibold">8.90€</span></div>
+                        <p class="text-stone-500 text-sm">Cortes de verduras tiernas y frescas</p>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Nachos Mexicanos</span><span class="text-amber-600 font-semibold">12.90€</span></div>
+                        <p class="text-stone-500 text-sm">Carne picada, queso cheddar, pico de gallo, crema agría, guacamole y alubias</p>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Nachos Mexicanos Veganos</span><span class="text-amber-600 font-semibold">15.50€</span></div>
+                        <p class="text-stone-500 text-sm">Carne picada vegana, cheddar vegano, pico de gallo, guacamole y alubias</p>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Gyozas (6 Unidades)</span><span class="text-amber-600 font-semibold">8.50€</span></div>
+                        <p class="text-stone-500 text-sm">Pato, verduras o pollo</p>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Bocartes con Jamón</span><span class="text-amber-600 font-semibold">12.00€</span></div>
+                        <p class="text-stone-500 text-sm">Bocartes crujientes con jamón serrano frito</p>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+
+                <!-- TABLAS -->
+                <div class="bg-white/70 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg transition hover:shadow-2xl">
+                    <button onclick="toggleMenu('tablas')" class="w-full text-left relative">
+                    <img src="https://images.pexels.com/photos/5949901/pexels-photo-5949901.jpeg?auto=compress&cs=tinysrgb&w=800" class="h-56 w-full object-cover" alt="Tablas">
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                        <h3 class="text-3xl font-semibold text-white drop-shadow-lg">TABLAS</h3>
+                        <i id="icon-tablas" class="fas fa-chevron-down text-white text-2xl absolute right-6 bottom-4 transition-transform duration-300"></i>
+                    </div>
+                    </button>
+                    <div id="tablas" class="hidden px-6 py-4 text-stone-800 bg-white/60 backdrop-blur-md">
+                    <ul class="divide-y divide-stone-200">
+                        <li class="py-3"><div class="flex justify-between"><span class="font-semibold">Tabla de Quesos Asturianos</span><span class="text-amber-600 font-semibold">14.00€</span></div>
+                        <p class="text-stone-500 text-sm">Cabrales, Gamonéu y Afuega'l Pitu con membrillo y nueces</p></li>
+                        <li class="py-3"><div class="flex justify-between"><span class="font-semibold">Tabla de Ibéricos</span><span class="text-amber-600 font-semibold">15.50€</span></div>
+                        <p class="text-stone-500 text-sm">Jamón, Lomo, Chorizo y Queso curado</p></li>
+                    </ul>
+                    </div>
+                </div>
+
+                <!-- CARNES -->
+                <div class="bg-white/70 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg transition hover:shadow-2xl">
+                    <button onclick="toggleMenu('carnes')" class="w-full text-left relative">
+                    <img src="https://images.pexels.com/photos/262959/pexels-photo-262959.jpeg?auto=compress&cs=tinysrgb&w=800" class="h-56 w-full object-cover" alt="Carnes">
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                        <h3 class="text-3xl font-semibold text-white drop-shadow-lg">CARNES</h3>
+                        <i id="icon-carnes" class="fas fa-chevron-down text-white text-2xl absolute right-6 bottom-4 transition-transform duration-300"></i>
+                    </div>
+                    </button>
+                    <div id="carnes" class="hidden px-6 py-4 text-stone-800 bg-white/60 backdrop-blur-md">
+                    <ul class="divide-y divide-stone-200">
+                        <li class="py-3"><div class="flex justify-between"><span class="font-semibold">Entrecot a la Parrilla</span><span class="text-amber-600 font-semibold">22.00€</span></div>
+                        <p class="text-stone-500 text-sm">500g de carne asturiana con pimientos de Padrón</p></li>
+                        <li class="py-3"><div class="flex justify-between"><span class="font-semibold">Solomillo de Ternera</span><span class="text-amber-600 font-semibold">23.00€</span></div>
+                        <p class="text-stone-500 text-sm">Con reducción de sidra y puré de manzana</p></li>
+                    </ul>
+                    </div>
+                </div>
+
+                <!-- CACHOPO -->
+                <div class="bg-white/70 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg transition hover:shadow-2xl">
+                    <button onclick="toggleMenu('cachopo')" class="w-full text-left relative">
+                    <img src="https://images.pexels.com/photos/5409015/pexels-photo-5409015.jpeg?auto=compress&cs=tinysrgb&w=800" class="h-56 w-full object-cover" alt="Cachopo">
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                        <h3 class="text-3xl font-semibold text-white drop-shadow-lg">CACHOPO</h3>
+                        <i id="icon-cachopo" class="fas fa-chevron-down text-white text-2xl absolute right-6 bottom-4 transition-transform duration-300"></i>
+                    </div>
+                    </button>
+                    <div id="cachopo" class="hidden px-6 py-4 text-stone-800 bg-white/60 backdrop-blur-md">
+                    <ul class="divide-y divide-stone-200">
+                        <li class="py-3"><div class="flex justify-between"><span class="font-semibold">Cachopo Tradicional</span><span class="text-amber-600 font-semibold">18.00€</span></div>
+                        <p class="text-stone-500 text-sm">Ternera rellena de jamón y queso, con patatas caseras</p></li>
+                        <li class="py-3"><div class="flex justify-between"><span class="font-semibold">Cachopo de Cabrales</span><span class="text-amber-600 font-semibold">19.50€</span></div>
+                        <p class="text-stone-500 text-sm">Relleno de cecina, setas y queso de cabrales</p></li>
+                    </ul>
+                    </div>
+                </div>
+
+                <!-- TOSTAS -->
+                <div class="bg-white/70 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg transition hover:shadow-2xl">
+                    <button onclick="toggleMenu('tostas')" class="w-full text-left relative">
+                    <img src="./img/Tostas.jpg" class="h-56 w-full object-cover" alt="tostas">
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                        <h3 class="text-3xl font-semibold text-white drop-shadow-lg">TOSTAS</h3>
+                        <i id="icon-tostas" class="fas fa-chevron-down text-white text-2xl absolute right-6 bottom-4 transition-transform duration-300"></i>
+                    </div>
+                    </button>
+                    <div id="tostas" class="hidden px-6 py-4 text-stone-800 bg-white/60 backdrop-blur-md">
+                    <ul class="divide-y divide-stone-200">
+                        <li class="py-3">
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Tosta Jamón Ibérico</span><span class="text-amber-600 font-semibold">8.90€</span></div>
+                        <p class="text-stone-500 text-sm">Jamón ibérico, tumaca y AOVE</p>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Tosta de Salmon Humado</span><span class="text-amber-600 font-semibold">9.60€</span></div>
+                        <p class="text-stone-500 text-sm">Queso crema, Salom ahumado y rúcula</p>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Tosta Caprese</span><span class="text-amber-600 font-semibold">8.60€</span></div>
+                        <p class="text-stone-500 text-sm">Tomate, queso mozzarella, Pulpa de aguacate, canónigos y pesto fresco</p>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Tosta de Solomillo Ibérico</span><span class="text-amber-600 font-semibold">9.50€</span></div>
+                        <p class="text-stone-500 text-sm">Medallones de solomillo ibérico, rulo de queso de cabra, cebolla caramelizada y Rúcula</p>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Tosta de Gulas y Gambas</span><span class="text-amber-600 font-semibold">9.80€</span></div>
+                        <p class="text-stone-500 text-sm">Gulas y gambas salteadas en AOVE de ajo y perejil con Ali-Oli Suave</p>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Tosta de Verduras</span><span class="text-amber-600 font-semibold">8.80€</span></div>
+                        <p class="text-stone-500 text-sm">Pulpa de aguacate, berenjena, calabacin, pimiento rojo y verde, espárragos y tomate</p>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+
+                <!-- PULPOS -->
+                <div class="bg-white/70 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg transition hover:shadow-2xl">
+                    <button onclick="toggleMenu('pulpos')" class="w-full text-left relative">
+                    <img src="./img/Pulpos.jpg" class="h-56 w-full object-cover" alt="pulpos">
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                        <h3 class="text-3xl font-semibold text-white drop-shadow-lg">PULPOS</h3>
+                        <i id="icon-pulpos" class="fas fa-chevron-down text-white text-2xl absolute right-6 bottom-4 transition-transform duration-300"></i>
+                    </div>
+                    </button>
+                    <div id="pulpos" class="hidden px-6 py-4 text-stone-800 bg-white/60 backdrop-blur-md">
+                    <ul class="divide-y divide-stone-200">
+                        <li class="py-3">
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Pata de Pulpo</span><span class="text-amber-600 font-semibold">22.80€</span></div>
+                        <p class="text-stone-500 text-sm">Pata de pulpo al gril, acompañado de parmentier de patatas</p>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Pulpin al Grill</span><span class="text-amber-600 font-semibold">23.90€</span></div>
+                        <p class="text-stone-500 text-sm">Pulpin al grill con toque de pimentón dulce o picante acompañado de patatinas</p>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+
+                <!-- ENSALADAS -->
+                <div class="bg-white/70 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg transition hover:shadow-2xl">
+                    <button onclick="toggleMenu('ensaladas')" class="w-full text-left relative">
+                    <img src="./img/Ensaladas.jpg" class="h-56 w-full object-cover" alt="ensaladas">
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                        <h3 class="text-3xl font-semibold text-white drop-shadow-lg">ENSALADAS</h3>
+                        <i id="icon-ensaladas" class="fas fa-chevron-down text-white text-2xl absolute right-6 bottom-4 transition-transform duration-300"></i>
+                    </div>
+                    </button>
+                    <div id="ensaladas" class="hidden px-6 py-4 text-stone-800 bg-white/60 backdrop-blur-md">
+                    <ul class="divide-y divide-stone-200">
+                        <li class="py-3">
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Ensalada de Burrata</span><span class="text-amber-600 font-semibold">11.80€</span></div>
+                        <p class="text-stone-500 text-sm">Rúcula, tomate, frutos del bosque, salsa pesto y tomate seco</p>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Ensalada César</span><span class="text-amber-600 font-semibold">10.90€</span></div>
+                        <p class="text-stone-500 text-sm">Mezcla de lechuga con trozos de pollo crujientes, escamas de quesmo parmesano, crotones de pan y Salsa César</p>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Ensalada El Pasaje</span><span class="text-amber-600 font-semibold">11.90€</span></div>
+                        <p class="text-stone-500 text-sm">Mezclum fresco, Brotes,tomates cherry, aguacate, queso fresco, Gambones salvajes a la plancha, aderezo especial de la casa</p>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+
+                <!-- HUEVOS ROTOS -->
+                <div class="bg-white/70 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg transition hover:shadow-2xl">
+                    <button onclick="toggleMenu('huevos')" class="w-full text-left relative">
+                    <img src="./img/Huevos.jpg" class="h-56 w-full object-cover" alt="huevos">
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                        <h3 class="text-3xl font-semibold text-white drop-shadow-lg">HUEVOS ROTOS</h3>
+                        <i id="icon-huevos" class="fas fa-chevron-down text-white text-2xl absolute right-6 bottom-4 transition-transform duration-300"></i>
+                    </div>
+                    </button>
+                    <div id="huevos" class="hidden px-6 py-4 text-stone-800 bg-white/60 backdrop-blur-md">
+                    <ul class="divide-y divide-stone-200">
+                        <li class="py-3">
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Huevos Rotos con Jamón Ibérico</span><span class="text-amber-600 font-semibold">9.00€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Huevos Rotos Solomillo Ibérico</span><span class="text-amber-600 font-semibold">9.50€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Huevos Rotos Morcilla de León</span><span class="text-amber-600 font-semibold">8.90€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Huevos Rotos con Gulas y Gambas</span><span class="text-amber-600 font-semibold">9.80€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Huevos Rotos con Salmon Ahumado</span><span class="text-amber-600 font-semibold">9.60€</span></div>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+
+                <!-- HAMBURGUESAS -->
+                <div class="bg-white/70 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg transition hover:shadow-2xl">
+                    <button onclick="toggleMenu('hamburguesa')" class="w-full text-left relative">
+                    <img src="./img/Hamburguesa.jpg" class="h-56 w-full object-cover" alt="hamburguesa">
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                        <h3 class="text-3xl font-semibold text-white drop-shadow-lg">HAMBURGUESAS</h3>
+                        <i id="icon-hamburguesa" class="fas fa-chevron-down text-white text-2xl absolute right-6 bottom-4 transition-transform duration-300"></i>
+                    </div>
+                    </button>
+                    <div id="hamburguesa" class="hidden px-6 py-4 text-stone-800 bg-white/60 backdrop-blur-md">
+                    <ul class="divide-y divide-stone-200">
+                        <li class="py-3">
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Hamburguesa Angus</span><span class="text-amber-600 font-semibold">12.00€</span></div>
+                        <p class="text-stone-500 text-sm">Pan Brioche, 200g de carne Angus, rulo de cabra, bacón, cebolla confitada, lechuga, tomate y patatas fritas</p>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between">
+                            <span class="font-semibold">hamburguesa Wagyu</span><span class="text-amber-600 font-semibold">15.00€</span></div>
+                        <p class="text-stone-500 text-sm">Pan Brioche, 150g de carne Wagyu doble pata negra, bacón, queso Gameonéu, Cebolla roja encurtida, Lechuga, tomate y patatas fritas</p>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Hamburguesa de Pollo</span><span class="text-amber-600 font-semibold">10.00€</span></div>
+                        <p class="text-stone-500 text-sm">Milanesa de pollo crujiente, queso cheddar, pimiento confitado, bacón, lechuga, tomate y patatas fritas</p>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Hamburguesa Ahumada</span><span class="text-amber-600 font-semibold">12.50€</span></div>
+                        <p class="text-stone-500 text-sm">Pan Briochem Doble Burger Rizada de Vacuno Premiun, cheddar, bacón, pepinillos, lechuga, tomate y patatas fritas</p>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Hamburguesa Vegana</span><span class="text-amber-600 font-semibold">10.50€</span></div>
+                        <p class="text-stone-500 text-sm">Pan Brioche, pimientosasados, queso 100% vegano, burguer vegana, lechuga, tomate y patatas fritas</p>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Hamburguesa Blg-Veggle</span><span class="text-amber-600 font-semibold">13.50€</span></div>
+                        <p class="text-stone-500 text-sm">Pan Brioche, Doble veggle Burger, setas en tempura, Cheddar Vegano, Cebolla caramelizada, lechuga, tomate y patatas fritas</p>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4">
+            <div class="text-center mt-24 mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-stone-800 mb-6">Nuestras Bebidas</h2>
+            <div class="w-24 h-1 bg-amber-600 mx-auto mb-8"></div>
+            <p class="text-lg text-stone-600 max-w-2xl mx-auto">
+                Descubre nuestras bebidas refrescantes, tradicionales, modernas y con un sabor sin igual
+            </p>
+            </div>
+
+            <!-- GRID DE CATEGORÍAS -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+                <!-- GINEBRA -->
+                <div class="bg-white/70 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg transition hover:shadow-2xl">
+                    <button onclick="toggleMenu('ginebra')" class="w-full text-left relative">
+                    <img src="./img/Ginebra.jpg" class="h-56 w-full object-cover" alt="ginebra">
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                        <h3 class="text-3xl font-semibold text-white drop-shadow-lg">GINEBRA</h3>
+                        <i id="icon-ginebra" class="fas fa-chevron-down text-white text-2xl absolute right-6 bottom-4 transition-transform duration-300"></i>
+                    </div>
+                    </button>
+                    <div id="ginebra" class="hidden px-6 py-4 text-stone-800 bg-white/60 backdrop-blur-md">
+                    <ul class="divide-y divide-stone-200">
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Beefeater</span><span class="text-amber-600 font-semibold">4.50€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Rives</span><span class="text-amber-600 font-semibold">4.50€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Tanqueray</span><span class="text-amber-600 font-semibold">5.00€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Seagram's</span><span class="text-amber-600 font-semibold">5.00€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Puerto Indias</span><span class="text-amber-600 font-semibold">5.50€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Aperol Sprite</span><span class="text-amber-600 font-semibold">5.50€</span></div>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+
+                <!-- VERMUTH -->
+                <div class="bg-white/70 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg transition hover:shadow-2xl">
+                    <button onclick="toggleMenu('vermuth')" class="w-full text-left relative">
+                    <img src="./img/Vermuth.jpg" class="h-56 w-full object-cover" alt="vermuth">
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                        <h3 class="text-3xl font-semibold text-white drop-shadow-lg">VERMUTH</h3>
+                        <i id="icon-vermuth" class="fas fa-chevron-down text-white text-2xl absolute right-6 bottom-4 transition-transform duration-300"></i>
+                    </div>
+                    </button>
+                    <div id="vermuth" class="hidden px-6 py-4 text-stone-800 bg-white/60 backdrop-blur-md">
+                    <ul class="divide-y divide-stone-200">
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Yzaguirre Rojo</span><span class="text-amber-600 font-semibold">2.60€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Yzaguirre Blanco</span><span class="text-amber-600 font-semibold">2.60€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Yzaguirre Reserva</span><span class="text-amber-600 font-semibold">3.00€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Martini Blanco</span><span class="text-amber-600 font-semibold">2.30€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Martini Rosso</span><span class="text-amber-600 font-semibold">2.30€</span></div>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+
+                <!-- VODKA -->
+                <div class="bg-white/70 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg transition hover:shadow-2xl">
+                    <button onclick="toggleMenu('vodka')" class="w-full text-left relative">
+                    <img src="./img/Vodka.jpg" class="h-56 w-full object-cover" alt="vodka">
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                        <h3 class="text-3xl font-semibold text-white drop-shadow-lg">VODKA</h3>
+                        <i id="icon-vodka" class="fas fa-chevron-down text-white text-2xl absolute right-6 bottom-4 transition-transform duration-300"></i>
+                    </div>
+                    </button>
+                    <div id="vodka" class="hidden px-6 py-4 text-stone-800 bg-white/60 backdrop-blur-md">
+                    <ul class="divide-y divide-stone-200">
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Abdolut</span><span class="text-amber-600 font-semibold">4.80€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Eristoff</span><span class="text-amber-600 font-semibold">4.80€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Smirnoff</span><span class="text-amber-600 font-semibold">4.80€</span></div>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+
+                <!-- CHUPITOS -->
+                <div class="bg-white/70 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg transition hover:shadow-2xl">
+                    <button onclick="toggleMenu('chupitos')" class="w-full text-left relative">
+                    <img src="./img/Chupitos.jpg" class="h-56 w-full object-cover" alt="chupitos">
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                        <h3 class="text-3xl font-semibold text-white drop-shadow-lg">CHUPITOS</h3>
+                        <i id="icon-chupitos" class="fas fa-chevron-down text-white text-2xl absolute right-6 bottom-4 transition-transform duration-300"></i>
+                    </div>
+                    </button>
+                    <div id="chupitos" class="hidden px-6 py-4 text-stone-800 bg-white/60 backdrop-blur-md">
+                    <ul class="divide-y divide-stone-200">
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Black Label</span><span class="text-amber-600 font-semibold">4.00€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Jack Daniel's</span><span class="text-amber-600 font-semibold">4.00€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Legendario</span><span class="text-amber-600 font-semibold">3.50€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Brugal</span><span class="text-amber-600 font-semibold">2.80€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Jägermeister</span><span class="text-amber-600 font-semibold">4.00€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Tequila José Cuervo</span><span class="text-amber-600 font-semibold">4.00€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Baileys</span><span class="text-amber-600 font-semibold">4.00€</span></div>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+
+                <!-- COCTELES -->
+                <div class="bg-white/70 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg transition hover:shadow-2xl">
+                    <button onclick="toggleMenu('cocteles')" class="w-full text-left relative">
+                    <img src="./img/Cocteles.jpg" class="h-56 w-full object-cover" alt="cocteles">
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                        <h3 class="text-3xl font-semibold text-white drop-shadow-lg">COCTELES</h3>
+                        <i id="icon-cocteles" class="fas fa-chevron-down text-white text-2xl absolute right-6 bottom-4 transition-transform duration-300"></i>
+                    </div>
+                    </button>
+                    <div id="cocteles" class="hidden px-6 py-4 text-stone-800 bg-white/60 backdrop-blur-md">
+                    <ul class="divide-y divide-stone-200">
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Mojito</span><span class="text-amber-600 font-semibold">6.00€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Bloody Mary</span><span class="text-amber-600 font-semibold">7.00€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Caipirinha</span><span class="text-amber-600 font-semibold">6.50€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Daiquiri</span><span class="text-amber-600 font-semibold">6.00€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Margarita</span><span class="text-amber-600 font-semibold">7.00€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Moscow Mule</span><span class="text-amber-600 font-semibold">8.00€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Piña Colada</span><span class="text-amber-600 font-semibold">7.00€</span></div>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+
+                <!-- WHISKY -->
+                <div class="bg-white/70 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg transition hover:shadow-2xl">
+                    <button onclick="toggleMenu('whisky')" class="w-full text-left relative">
+                    <img src="./img/Whisky.jpg" class="h-56 w-full object-cover" alt="whisky">
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                        <h3 class="text-3xl font-semibold text-white drop-shadow-lg">WHISKY</h3>
+                        <i id="icon-whisky" class="fas fa-chevron-down text-white text-2xl absolute right-6 bottom-4 transition-transform duration-300"></i>
+                    </div>
+                    </button>
+                    <div id="whisky" class="hidden px-6 py-4 text-stone-800 bg-white/60 backdrop-blur-md">
+                    <ul class="divide-y divide-stone-200">
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Red Label</span><span class="text-amber-600 font-semibold">4.80€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Black Label</span><span class="text-amber-600 font-semibold">6.00€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">White Label</span><span class="text-amber-600 font-semibold">4.80€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">DyC</span><span class="text-amber-600 font-semibold">4.00€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Ballantines</span><span class="text-amber-600 font-semibold">4.80€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Jack Daniel's</span><span class="text-amber-600 font-semibold">6.80€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">JB</span><span class="text-amber-600 font-semibold">4.80€</span></div>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+
+                <!-- RON -->
+                <div class="bg-white/70 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg transition hover:shadow-2xl">
+                    <button onclick="toggleMenu('ron')" class="w-full text-left relative">
+                    <img src="./img/Ron.jpg" class="h-56 w-full object-cover" alt="ron">
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                        <h3 class="text-3xl font-semibold text-white drop-shadow-lg">RON</h3>
+                        <i id="icon-ron" class="fas fa-chevron-down text-white text-2xl absolute right-6 bottom-4 transition-transform duration-300"></i>
+                    </div>
+                    </button>
+                    <div id="ron" class="hidden px-6 py-4 text-stone-800 bg-white/60 backdrop-blur-md">
+                    <ul class="divide-y divide-stone-200">
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Bacardi</span><span class="text-amber-600 font-semibold">4.50€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Legendario</span><span class="text-amber-600 font-semibold">6.80€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Brugal</span><span class="text-amber-600 font-semibold">4.80€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Cacique</span><span class="text-amber-600 font-semibold">4.80€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Barcelo</span><span class="text-amber-600 font-semibold">4.80€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Arehucas</span><span class="text-amber-600 font-semibold">4.50€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Habana 7</span><span class="text-amber-600 font-semibold">6.00€</span></div>
+                        </li>
+                        <li class="py-3">
+                        <div class="flex justify-between"><span class="font-semibold">Habana 3</span><span class="text-amber-600 font-semibold">4.00€</span></div>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ubicación -->
+    <section id="ubicacion" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-stone-800 mb-6">Ubicación</h2>
+                <div class="w-24 h-1 bg-amber-600 mx-auto mb-8"></div>
+                <p class="text-lg text-stone-600">Visítanos en el corazón de Gijón</p>
+            </div>
+
+            <div class="max-w-5xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <div class="bg-stone-50 p-8 rounded-lg">
+                        <i class="fas fa-map-marker-alt text-3xl text-amber-600 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-3">Dirección</h3>
+                        <p class="text-stone-600 mb-4">
+                            Sidrería Restaurante el Pasaje<br>
+                            C. Eleuterio Quintanilla, 68<br>
+                            Gijón, Asturias, España
+                        </p>
+                        <a href="https://www.google.com/maps?q=Sidrer%C3%ADa+Restaurante+el+Pasaje,+C.+Eleuterio+Quintanilla,+68,+Centro,+33208+Gij%C3%B3n,+Asturias&ftid=0xd367c8c711e21f1:0x4618a3ceb9900005&entry=gps"
+                        target="_blank"
+                        class="text-amber-600 hover:text-amber-700 font-medium inline-flex items-center">
+                            Cómo llegar <i class="fas fa-external-link-alt ml-2"></i>
+                        </a>
+                    </div>
+
+                    <div class="bg-stone-50 p-8 rounded-lg">
+                        <i class="fas fa-clock text-3xl text-amber-600 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-3">Horario</h3>
+                        <p class="text-stone-600">
+                            <strong>Lunes a Sábados:</strong> 11:00 - 17:00 / 19:30 - Cierre<br>
+                            <strong>Sábados:</strong> 12:00 - 17:00 / 20:00 - Cierre<br>
+                            <strong>Miércoles:</strong> CERRADO POR DESCANSO<br>
+                            <span class="text-amber-600 font-medium mt-2 inline-block">Reservas recomendadas</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="map-container shadow-lg">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2995.108523979496!2d-5.6619462!3d43.5321679!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd367c8c711e21f1%3A0x4618a3ceb9900005!2sSidrer%C3%ADa%20Restaurante%20el%20Pasaje!5e0!3m2!1ses!2ses!4v1730560000000!5m2!1ses!2ses"
+                        width="100%"
+                        height="450"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        class="rounded-lg">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contácto -->
+    <section id="contacto" class="py-20 bg-stone-800 text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Contacto</h2>
+                <div class="w-24 h-1 bg-amber-600 mx-auto mb-8"></div>
+                <p class="text-lg text-stone-300">Estamos aquí para atenderte</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                    <div class="text-center">
+                        <i class="fas fa-phone text-4xl text-amber-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Teléfono</h3>
+                        <a href="tel:+34684688094" class="text-stone-300 hover:text-amber-500 transition">+34 684 68 80 94</a>
+                    </div>
+
+                    <div class="text-center">
+                        <i class="fas fa-envelope text-4xl text-amber-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Email</h3>
+                        <a href="mailto:info@elpasaje.es" class="text-stone-300 hover:text-amber-500 transition">info@elpasaje.es</a>
+                    </div>
+
+                    <div class="text-center">
+                        <i class="fas fa-calendar-alt text-4xl text-amber-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Reservas</h3>
+                        <a href="tel:+34684688094" class="text-stone-300 hover:text-amber-500 transition">Llamar para reservar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-wine-bottle text-3xl text-amber-500"></i>
+                        <h3 class="text-2xl font-bold">El Pasaje - Restaurante</h3>
+                    </div>
+                    <p class="text-stone-400">
+                        Auténtica sidrería asturiana en Gijón, donde la tradición y el sabor se encuentran.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Enlaces Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#inicio" class="text-stone-400 hover:text-amber-500 transition">Inicio</a></li>
+                        <li><a href="#sobre-nosotros" class="text-stone-400 hover:text-amber-500 transition">Sobre Nosotros</a></li>
+                        <li><a href="#menu" class="text-stone-400 hover:text-amber-500 transition">Carta</a></li>
+                        <li><a href="#ubicacion" class="text-stone-400 hover:text-amber-500 transition">Ubicación</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Síguenos</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/share/1A3L7pxWC8/?mibextid=wwXIfr" target="_blank" class="social-icon text-stone-400 hover:text-amber-500 transition text-2xl">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/sid.rest_elpasaje/" target="_blank" class="social-icon text-stone-400 hover:text-amber-500 transition text-2xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <!-- <a href="#" class="social-icon text-stone-400 hover:text-amber-500 transition text-2xl">
+                            <i class="fab fa-twitter"></i>
+                        </a> -->
+                        <a href="#" class="social-icon text-stone-400 hover:text-amber-500 transition text-2xl">
+                            <i class="fab fa-tripadvisor"></i>
+                        </a>
+                    </div>
+                    <div class="mt-6">
+                        <p class="text-stone-400 mb-2">
+                            <i class="fas fa-phone mr-2"></i>+34 684 68 80 94
+                        </p>
+                       <!--  <p class="text-stone-400">
+                            <i class="fas fa-envelope mr-2"></i>info@elpasaje.es
+                        </p> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-stone-800 pt-8 text-center text-stone-400">
+                <p>&copy; 2025 Sidrería - El Pasaje - Restaurante. Todos los derechos reservados.</p>
+                <p>&copy; Daniel Estrada Developer</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Funcionalidad -->
+<script src="js/js.js"></script>
+</body>
+</html>
