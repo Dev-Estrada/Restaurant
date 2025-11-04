@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+* {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Playfair Display', serif;
+}
+
+.header-glass {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.hero-overlay {
+    background: linear-gradient(135deg, rgba(51, 51, 51, 0.5) 0%, rgba(60, 46, 40, 0.75) 100%);
+}
+
+.menu-item {
+    transition: all 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.category-btn {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.category-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: #F59E0B;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.category-btn.active::after {
+    width: 80%;
+}
+
+.category-btn:hover {
+    color: #F59E0B;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-card {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(5px);
+}
+
+.price-tag {
+    color: #D97706;
+    font-weight: 600;
+}
+
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #D97706;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.map-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.social-icon {
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px) scale(1.1);
+}
+
+.nav-scrolled {
+    background: rgba(250, 111, 18, 0.932);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-scrolled h1,
+.nav-scrolled a,
+.nav-scrolled i {
+    color: white !important;
+}
+
+.nav-scrolled .nav-link:hover::after {
+    background: white;
+}
