@@ -13,17 +13,18 @@ const RESTAURANT_MENU = {
         { name: 'Croquetas Artesanas', price: '7.50', description: '6 Unidades a elegir Jamón Ibérico, Chipirones o Pulpo' },
         { name: 'Gajos de Patatas Bravas o Braviolis', price: '7.20', description: 'Salsas Caseras' },
         { name: 'Chorizo a la Sidra', price: '7.80', description: 'Clásica receta con chorizo extra de León' },
-        { name: 'Tortos de Maíz Asturianos', price: '10.50', description: 'Picadillo, huevo, jamón salteado y queso curado de oveja con membrillo de manzana' },
+        { name: 'Tortos de Maíz Asturianos', price: '14.50', description: '6 Unidades, Picadillo, Matachana, Guacamole y Huevo' },
         { name: 'Solomillos de Pollo Crujientes', price: '9.50', description: 'Tiras de pollo crujientes apanados con panko japonés' },
         { name: 'Calamares Fritos a la Romana', price: '13.50', description: 'Anillas de pota rebozado acompañado con lima y alioli suave' },
         { name: 'Berenjenas a la Cordobesa con Miel', price: '8.50', description: 'Receta centenaria de la Abuela con miel de flores y miel de caña' },
         { name: 'Ensaladilla Rusa Tradicional', price: '8.10', description: 'Pan picos, pimiento piquillo y gambas babys crujiente' },
-        { name: 'Gambones a la Parrilla', price: '12.70', description: '7 unidades de Gambones L1 en Aove de ajo' },
+        { name: 'Gambones a la Parrilla', price: '15.00', description: '7 Unidades de Gambones L1 en AOVE de Ajillo' },
         { name: 'Parrillada de Verduras', price: '8.90', description: 'Cortes de verduras tiernas y frescas' },
-        { name: 'Nachos Mexicanos', price: '12.90', description: 'Carne picada, queso cheddar, pico de gallo, crema agria, guacamole y alubias' },
-        { name: 'Nachos Mexicanos Veganos', price: '15.50', description: 'Carne picada vegana, cheddar vegano, pico de gallo, guacamole y alubias' },
-        { name: 'Gyozas (6 Unidades)', price: '8.50', description: 'Pato, verduras o pollo' },
-        { name: 'Bocartes con Jamón', price: '12.00', description: 'Bocartes crujientes con jamón serrano frito' }
+        { name: 'Nachos Mexicanos', price: '14.50', description: 'Carne Picada, Queso Cheddar, Pico de Gallo, Crema Agria, Guacamole y Alubias' },
+        { name: 'Nachos Mexicanos Veganos', price: '15.50', description: 'Carne Picada Vegana, Cheddar Vegano, Pico de Gallo, Guacamole y Alubias' },
+        { name: 'Gyozas', price: '10.50', description: '10 Unidades de Pato, Verduras o Pollo' },
+        { name: 'Bocartes Crujientes con Jamón', price: '12.00', description: 'Bocartes Crujientes con Jamón' },
+        { name: 'Tortos de Maíz Veganos', price: '16.00', description: '6 Unidades, Picadillo Vegano, Morcilla Vegana, Guacamole y Grelos de Verduras Salteadas' }
       ]
     },
     {
@@ -31,7 +32,8 @@ const RESTAURANT_MENU = {
       name: 'Tablas',
       image: 'https://images.pexels.com/photos/5949901/pexels-photo-5949901.jpeg?auto=compress&cs=tinysrgb&w=800',
       items: [
-        { name: 'Tabla de Quesos Asturianos', price: '14.00', description: 'Cabrales, Gamonéu y Afuega\'l Pitu con membrillo y nueces' },
+        { name: 'Tabla El Pasaje para Compartir', price: '18.50', description: 'Mix de Croquetas, Gambones a la Plancha, Aros de Cebolla, Alitas de Pollo, Gyozas Fritas y Patata Braviolis' },
+        { name: 'Tabla de Quesos Asturianos', price: '14.00', description: 'Cabrales, Gamonéu y Afuega\'l Pitu con Membrillo y Nueces' },
         { name: 'Tabla de Ibéricos', price: '15.50', description: 'Jamón, Lomo, Chorizo y Queso curado' }
       ]
     },
@@ -58,10 +60,10 @@ const RESTAURANT_MENU = {
       name: 'Tostas',
       image: './img/Tostas.jpg',
       items: [
-        { name: 'Tosta Jamón Ibérico', price: '8.90', description: 'Jamón ibérico, tumaca y AOVE' },
+        { name: 'Tosta Jamón Ibérico', price: '8.90', description: 'Jamón Ibérico, Tumaca y AOVE' },
         { name: 'Tosta de Salmon Humado', price: '9.60', description: 'Queso crema, Salmón ahumado y rúcula' },
         { name: 'Tosta Caprese', price: '8.60', description: 'Tomate, queso mozzarella, Pulpa de aguacate, canónigos y pesto fresco' },
-        { name: 'Tosta de Solomillo Ibérico', price: '9.50', description: 'Medallones de solomillo ibérico, rulo de queso de cabra, cebolla caramelizada y Rúcula' },
+        { name: 'Tosta de Solomillo Ibérico', price: '9.50', description: 'Medallones de Solomillo Ibérico, Rulo de Queso de Cabra, Cebolla Caramelizada y Rúcula' },
         { name: 'Tosta de Gulas y Gambas', price: '9.80', description: 'Gulas y gambas salteadas en AOVE de ajo y perejil con Ali-Oli Suave' },
         { name: 'Tosta de Verduras', price: '8.80', description: 'Pulpa de aguacate, berenjena, calabacín, pimiento rojo y verde, espárragos y tomate' }
       ]
@@ -71,8 +73,9 @@ const RESTAURANT_MENU = {
       name: 'Pulpos',
       image: './img/Pulpos.jpg',
       items: [
-        { name: 'Pata de Pulpo', price: '22.80', description: 'Pata de pulpo al grill, acompañado de parmentier de patatas' },
-        { name: 'Pulpin al Grill', price: '23.90', description: 'Pulpin al grill con toque de pimentón dulce o picante acompañado de patatinas' }
+        { name: 'Pata de Pulpo', price: '22.80', description: 'Pata de Pulpo al Grill, Acompañado de Parmentier de Patatas' },
+        { name: 'Pulpin al Grill', price: '23.90', description: 'Pulpin al Grill con Toque de Pimentón Dulce o Picante, Acompañado de Patatinas' },
+        { name: 'Vleiras', price: '16.00', description: 'Vleiras' }
       ]
     },
     {
@@ -80,9 +83,9 @@ const RESTAURANT_MENU = {
       name: 'Ensaladas',
       image: './img/Ensaladas.jpg',
       items: [
-        { name: 'Ensalada de Burrata', price: '11.80', description: 'Rúcula, tomate, frutos del bosque, salsa pesto y tomate seco' },
-        { name: 'Ensalada César', price: '10.90', description: 'Mezcla de lechuga con trozos de pollo crujientes, escamas de queso parmesano, crotones de pan y Salsa César' },
-        { name: 'Ensalada El Pasaje', price: '11.90', description: 'Mezclum fresco, Brotes, tomates cherry, aguacate, queso fresco, Gambones salvajes a la plancha, aderezo especial de la casa' }
+        { name: 'Ensalada de Burrata', price: '12.80', description: 'Rúcula, Tomate, Fruta del Bosque, Nueces, Salsa Pesto y Tomate Seco' },
+        { name: 'Ensalada César', price: '12.90', description: 'Mezcla de Lechuga con Trozos de Pollo Crujientes, Escamas de Queso Parmesano, Crotones de Pan y Salsa César' },
+        { name: 'Ensalada El Pasaje', price: '13.50', description: 'Mezclum Fresco, Brotes, Tomate Cherry, Aguacate, Queso Fresco, Gambones Salvajes a la Plancha, Aderezo Especial de la Casa' }
       ]
     },
     {
@@ -102,11 +105,11 @@ const RESTAURANT_MENU = {
       name: 'Hamburguesas',
       image: './img/Hamburguesa.jpg',
       items: [
-        { name: 'Hamburguesa Angus', price: '12.00', description: 'Pan Brioche, 200g de carne Angus, rulo de cabra, bacón, cebolla confitada, lechuga, tomate y patatas fritas' },
+        { name: 'Hamburguesa Angus', price: '13.20', description: 'Pan Brioche, 200g de Carne Angus, Rulo de Cabra, Bacón, Cebolla Confitada, Lechuga, Tomate y Patatas Fritas' },
         { name: 'Hamburguesa Wagyu', price: '15.00', description: 'Pan Brioche, 150g de carne Wagyu doble pata negra, bacón, queso Gamonéu, Cebolla roja encurtida, Lechuga, tomate y patatas fritas' },
         { name: 'Hamburguesa de Pollo', price: '10.00', description: 'Milanesa de pollo crujiente, queso cheddar, pimiento confitado, bacón, lechuga, tomate y patatas fritas' },
         { name: 'Hamburguesa Ahumada', price: '12.50', description: 'Pan Brioche, Doble Burger Rizada de Vacuno Premium, cheddar, bacón, pepinillos, lechuga, tomate y patatas fritas' },
-        { name: 'Hamburguesa Vegana', price: '10.50', description: 'Pan Brioche, pimientos asados, queso 100% vegano, burguer vegana, lechuga, tomate y patatas fritas' },
+        { name: 'Hamburguesa Vegana', price: '12.80', description: 'Pimientos Asados, Queso 100% Vegano, Burger Vegana, Lechuga, Tomate y Patatas Fritas' },
         { name: 'Hamburguesa Big-Veggle', price: '13.50', description: 'Pan Brioche, Doble veggle Burger, setas en tempura, Cheddar Vegano, Cebolla caramelizada, lechuga, tomate y patatas fritas' }
       ]
     }
