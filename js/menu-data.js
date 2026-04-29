@@ -112,6 +112,35 @@ const RESTAURANT_MENU = {
         { name: 'Hamburguesa Vegana', price: '12.80', description: 'Pimientos Asados, Queso 100% Vegano, Burger Vegana, Lechuga, Tomate y Patatas Fritas' },
         { name: 'Hamburguesa Big-Veggle', price: '13.50', description: 'Pan Brioche, Doble veggle Burger, setas en tempura, Cheddar Vegano, Cebolla caramelizada, lechuga, tomate y patatas fritas' }
       ]
+    },
+    {
+      id: 'postres',
+      name: 'Postres',
+      image: './img/Postres.jpg',
+      items: [
+        { name: 'Tarta de Queso', price: '6.50' },
+        { name: 'Tarta de Zanahoria', price: '6.80' },
+        { name: 'Brownie con Helado', price: '6.10' },
+        { name: 'Coulant de Chocolate', price: '4.90' },
+        { name: 'Crepes con Avellana', price: '5.50' },
+        { name: 'Flan con Sirope de Vainilla', price: '3.30' },
+        { name: 'Arroz con Leche', price: '3.50' },
+        { name: 'Yogur con Coulis de Frutos del Bosque', price: '3.80' },
+        { name: 'Gofres con Helado', price: '6.00', description: 'Pistacho o Frutos Rojos' },
+        { name: 'Bola de Helado', price: '3.20', description: 'Vainilla, Pistacho o Frutos Rojos' }
+      ]
+    },
+    {
+      id: 'extras',
+      name: 'Extras',
+      image: './img/Extras.jpg',
+      items: [
+        { name: 'Bollo de Pan', price: '1.00' },
+        { name: 'Salsa Cabrales', price: '2.50' },
+        { name: 'Salsa Alioli', price: '2.00' },
+        { name: 'Salsa Brava', price: '2.00' },
+        { name: 'Recipiente para Llevar', price: '0.60' }
+      ]
     }
   ],
   drinks: [
