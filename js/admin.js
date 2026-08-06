@@ -9,6 +9,7 @@
 
   var MAX_IMAGE_SIDE = 1400;
   var IMAGE_QUALITY = 0.82;
+  var TAB_SESSION_KEY = 'pasaje_admin_tab';
 
   var SITE_GROUPS = [
     {
@@ -100,6 +101,23 @@
         return data;
       });
     });
+  }
+
+  /**
+   * Marca de sesión propia de la pestaña: sessionStorage se borra al cerrarla,
+   * así que al volver a abrir /admin siempre hay que introducir la contraseña.
+   */
+  function markTabSession() {
+    try { sessionStorage.setItem(TAB_SESSION_KEY, '1'); } catch (error) { /* almacenamiento no disponible */ }
+  }
+
+  function clearTabSession() {
+    try { sessionStorage.removeItem(TAB_SESSION_KEY); } catch (error) { /* almacenamiento no disponible */ }
+  }
+
+  function hasTabSession() {
+    // Si el navegador bloquea sessionStorage se confía en la cookie para no dejar a nadie fuera.
+    try { return sessionStorage.getItem(TAB_SESSION_KEY) === '1'; } catch (error) { return true; }
   }
 
   function handleAuthError(error) {
@@ -507,6 +525,8 @@
   // ---------------------------------------------------------------- sesión
 
   function showLogin(message) {
+    clearTabSession();
+    state.dirty = false;
     el.app.hidden = true;
     el.loginScreen.hidden = false;
     el.loginError.hidden = !message;
@@ -516,6 +536,7 @@
   }
 
   function showApp(status) {
+    markTabSession();
     el.loginScreen.hidden = true;
     el.app.hidden = false;
 
@@ -669,8 +690,18 @@
 
     request('/api/session')
       .then(function (status) {
-        if (status.authenticated) showApp(status);
-        else showLogin(status.passwordConfigured ? '' : 'Falta configurar la contraseña (ADMIN_PASSWORD) en Vercel.');
+        if (status.authenticated && hasTabSession()) {
+          showApp(status);
+          return undefined;
+        }
+        if (status.authenticated) {
+          // Cookie viva pero pestaña nueva: se cierra la sesión antes de pedir la contraseña.
+          return request('/api/session', { method: 'DELETE' })
+            .catch(function () { /* la sesión se descarta igualmente en el navegador */ })
+            .then(function () { showLogin(''); });
+        }
+        showLogin(status.passwordConfigured ? '' : 'Falta configurar la contraseña (ADMIN_PASSWORD) en Vercel.');
+        return undefined;
       })
       .catch(function () {
         showLogin('No se ha podido conectar con el servidor.');

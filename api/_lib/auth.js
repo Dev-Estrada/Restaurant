@@ -41,19 +41,23 @@ function isLocalHost(req) {
   return /^(localhost|127\.0\.0\.1|\[::1\])(:|$)/.test(host);
 }
 
+/**
+ * Cookie de sesión sin Max-Age: el navegador la descarta al cerrarse. La firma
+ * lleva además una caducidad propia como tope máximo.
+ */
 export function buildSessionCookie(req) {
-  const key = signingKey();
   const expiresAt = String(Date.now() + SESSION_HOURS * 3600 * 1000);
-  const signature = crypto.createHmac('sha256', key).update(expiresAt).digest('hex');
-  return cookieString(`${expiresAt}.${signature}`, SESSION_HOURS * 3600, req);
+  const signature = crypto.createHmac('sha256', signingKey()).update(expiresAt).digest('hex');
+  return cookieString(`${expiresAt}.${signature}`, req, null);
 }
 
 export function buildLogoutCookie(req) {
-  return cookieString('', 0, req);
+  return cookieString('', req, 0);
 }
 
-function cookieString(value, maxAge, req) {
-  const parts = [`${COOKIE_NAME}=${value}`, 'Path=/', 'HttpOnly', 'SameSite=Lax', `Max-Age=${maxAge}`];
+function cookieString(value, req, maxAge) {
+  const parts = [`${COOKIE_NAME}=${value}`, 'Path=/', 'HttpOnly', 'SameSite=Lax'];
+  if (maxAge !== null) parts.push(`Max-Age=${maxAge}`);
   if (!isLocalHost(req)) parts.push('Secure');
   return parts.join('; ');
 }

@@ -26,6 +26,9 @@
 *::before,
 *::after { box-sizing: border-box; }
 
+/* Las reglas de display de más abajo ganan al hidden del navegador. */
+[hidden] { display: none !important; }
+
 body.admin-body {
   margin: 0;
   font-family: var(--font-body);
