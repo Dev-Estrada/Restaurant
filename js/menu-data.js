@@ -1,9 +1,28 @@
 /**
- * Carta del restaurante - El Pasaje
- * Estructura escalable: añade categorías o platos aquí.
- * Para cambiar imágenes: actualiza la propiedad "image" de cada categoría.
+ * Carta e información del restaurante - El Pasaje
+ *
+ * Este archivo es la versión de partida y la copia de seguridad: la web carga
+ * primero los datos guardados desde el panel (/admin) y, si no hay ninguno
+ * o falla la conexión, usa lo que haya aquí.
  */
 const RESTAURANT_MENU = {
+  site: {
+    heroTagline: 'Sidrería Asturiana',
+    heroDesc: 'Sabores auténticos de Asturias en el corazón de Gijón',
+    heroCta: 'Ver nuestra carta',
+    aboutText1: 'En **El Pasaje**, llevamos la tradición asturiana a tu mesa desde hace generaciones. Nuestra sidrería es un homenaje a la gastronomía de Asturias, donde cada plato cuenta una historia y cada escanciado de sidra es un arte.',
+    aboutText2: 'Ubicados en Gijón, nos enorgullece ofrecer los mejores productos locales: desde nuestro famoso cachopo hasta la sidra natural que fluye de las mejores pomaradas asturianas. Nuestro compromiso es con la calidad, la autenticidad y la hospitalidad que nos caracteriza.',
+    menuIntro: 'Descubre nuestros platos y bebidas cuidadosamente seleccionados',
+    addressLines: 'Sidrería Restaurante El Pasaje\nC. Eleuterio Quintanilla, 68\nGijón, Asturias, España',
+    mapsUrl: 'https://www.google.com/maps?q=Sidrer%C3%ADa+Restaurante+el+Pasaje,+C.+Eleuterio+Quintanilla,+68,+Centro,+33208+Gij%C3%B3n,+Asturias&ftid=0xd367c8c711e21f1:0x4618a3ceb9900005&entry=gps',
+    hoursLines: '**Lunes a Viernes:** 11:00 – 17:00 / 19:30 – Cierre\n**Sábados:** 12:00 – 17:00 / 20:00 – Cierre\n**Miércoles:** Cerrado por descanso',
+    hoursNote: 'Reservas recomendadas',
+    phone: '+34 684 68 80 94',
+    email: 'info@elpasaje.es',
+    footerAbout: 'Auténtica sidrería asturiana en Gijón, donde la tradición y el sabor se encuentran.',
+    facebookUrl: 'https://www.facebook.com/share/1A3L7pxWC8/?mibextid=wwXIfr',
+    instagramUrl: 'https://www.instagram.com/sid.rest_elpasaje/'
+  },
   food: [
     {
       id: 'entrantes',
@@ -40,7 +59,7 @@ const RESTAURANT_MENU = {
     {
       id: 'carnes',
       name: 'Carnes',
-      image: 'https://images.pexels.com/photos/262959/pexels-photo-262959.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: './img/Carnes.jpeg',
       items: [
         { name: 'Entrecot a la Parrilla', price: '22.00', description: '500g de carne asturiana con pimientos de Padrón' },
         { name: 'Solomillo de Ternera', price: '23.00', description: 'Con reducción de sidra y puré de manzana' }
@@ -58,7 +77,7 @@ const RESTAURANT_MENU = {
     {
       id: 'tostas',
       name: 'Tostas',
-      image: './img/Tostas.jpg',
+      image: './img/Tostas.jpeg',
       items: [
         { name: 'Tosta Jamón Ibérico', price: '8.90', description: 'Jamón Ibérico, Tumaca y AOVE' },
         { name: 'Tosta de Salmon Humado', price: '9.60', description: 'Queso crema, Salmón ahumado y rúcula' },
@@ -81,7 +100,7 @@ const RESTAURANT_MENU = {
     {
       id: 'ensaladas',
       name: 'Ensaladas',
-      image: './img/Ensaladas.jpg',
+      image: './img/Ensalada.jpeg',
       items: [
         { name: 'Ensalada de Burrata', price: '12.80', description: 'Rúcula, Tomate, Fruta del Bosque, Nueces, Salsa Pesto y Tomate Seco' },
         { name: 'Ensalada César', price: '12.90', description: 'Mezcla de Lechuga con Trozos de Pollo Crujientes, Escamas de Queso Parmesano, Crotones de Pan y Salsa César' },
@@ -103,7 +122,7 @@ const RESTAURANT_MENU = {
     {
       id: 'hamburguesa',
       name: 'Hamburguesas',
-      image: './img/Hamburguesa.jpg',
+      image: './img/Hamburguesa.jpeg',
       items: [
         { name: 'Hamburguesa Angus', price: '13.20', description: 'Pan Brioche, 200g de Carne Angus, Rulo de Cabra, Bacón, Cebolla Confitada, Lechuga, Tomate y Patatas Fritas' },
         { name: 'Hamburguesa Wagyu', price: '15.00', description: 'Pan Brioche, 150g de carne Wagyu doble pata negra, bacón, queso Gamonéu, Cebolla roja encurtida, Lechuga, tomate y patatas fritas' },

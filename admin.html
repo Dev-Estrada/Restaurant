@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/png" href="./img/Sidreria.png">
+  <title>Gestión de la carta | Sidrería El Pasaje</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-body">
+
+  <!-- Pantalla de acceso -->
+  <div class="login-screen" id="login-screen" hidden>
+    <form class="login-card" id="login-form">
+      <img src="./img/Sidreria.png" alt="Sidrería El Pasaje" class="login-logo">
+      <h1 class="login-title">Gestión de la carta</h1>
+      <p class="login-desc">Introduce la contraseña para editar el menú y la información del restaurante.</p>
+      <label class="field">
+        <span class="field-label">Contraseña</span>
+        <input type="password" id="login-password" class="input" autocomplete="current-password" required>
+      </label>
+      <p class="login-error" id="login-error" hidden></p>
+      <button type="submit" class="btn btn-primary btn-block" id="login-submit">Entrar</button>
+    </form>
+  </div>
+
+  <!-- Panel -->
+  <div class="admin-app" id="admin-app" hidden>
+    <header class="admin-header">
+      <div class="admin-header-inner">
+        <div class="admin-brand">
+          <img src="./img/Sidreria.png" alt="" class="admin-logo">
+          <div>
+            <p class="admin-brand-title">Gestión de la carta</p>
+            <p class="admin-brand-sub" id="last-saved"></p>
+          </div>
+        </div>
+        <div class="admin-header-actions">
+          <a href="/" target="_blank" rel="noopener" class="btn btn-ghost"><i class="fas fa-eye"></i><span>Ver la web</span></a>
+          <button type="button" class="btn btn-ghost" id="undo-btn"><i class="fas fa-rotate-left"></i><span>Deshacer</span></button>
+          <button type="button" class="btn btn-ghost" id="logout-btn"><i class="fas fa-right-from-bracket"></i><span>Salir</span></button>
+        </div>
+      </div>
+      <nav class="admin-tabs" id="admin-tabs">
+        <button type="button" class="admin-tab is-active" data-tab="food">Comida</button>
+        <button type="button" class="admin-tab" data-tab="drinks">Bebidas</button>
+        <button type="button" class="admin-tab" data-tab="site">Información</button>
+      </nav>
+    </header>
+
+    <main class="admin-main">
+      <div class="notice notice-warning" id="setup-notice" hidden></div>
+      <div class="notice notice-info" id="seed-notice" hidden></div>
+
+      <section class="panel" id="panel-categories">
+        <div class="panel-head">
+          <div>
+            <h2 class="panel-title" id="categories-title">Comida</h2>
+            <p class="panel-desc" id="categories-desc"></p>
+          </div>
+          <button type="button" class="btn btn-primary" id="add-category"><i class="fas fa-plus"></i><span>Nueva categoría</span></button>
+        </div>
+        <div class="category-list" id="category-list"></div>
+      </section>
+
+      <section class="panel" id="panel-site" hidden>
+        <div class="panel-head">
+          <div>
+            <h2 class="panel-title">Información del restaurante</h2>
+            <p class="panel-desc">Textos, horario y datos de contacto que se muestran en la web. Escribe <code>**así**</code> para poner una palabra en negrita.</p>
+          </div>
+        </div>
+        <div class="site-fields" id="site-fields"></div>
+      </section>
+    </main>
+
+    <div class="save-bar" id="save-bar">
+      <span class="save-status" id="save-status">Sin cambios pendientes</span>
+      <button type="button" class="btn btn-primary btn-save" id="save-btn" disabled>
+        <i class="fas fa-floppy-disk"></i><span>Guardar cambios</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="toast-stack" id="toast-stack" aria-live="polite"></div>
+
+  <script src="js/menu-data.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

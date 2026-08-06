@@ -1,6 +1,8 @@
 /**
  * Sidrería El Pasaje - Interactividad
- * Menú renderizado desde menu-data.js, drawer, tabs, navegación y animaciones.
+ *
+ * Los datos se piden a /api/menu (lo que se guarda desde el panel /admin) y,
+ * mientras llegan o si fallan, se usa la copia incluida en menu-data.js.
  */
 
 (function () {
@@ -24,15 +26,36 @@
     drawerList: document.getElementById('drawer-list')
   };
 
+  var LOCAL_MENU = window.RESTAURANT_MENU || { site: {}, food: [], drinks: [] };
+  var MENU = LOCAL_MENU;
+
+  // --- Carga de datos ---
+  function fetchRemoteMenu() {
+    if (!window.fetch) return Promise.resolve(null);
+    return fetch('/api/menu', { cache: 'no-store' })
+      .then(function (res) { return res.status === 200 ? res.json() : null; })
+      .catch(function () { return null; });
+  }
+
+  function mergeMenu(remote) {
+    return {
+      // Los textos locales actúan de valor por defecto para campos aún no guardados.
+      site: Object.assign({}, LOCAL_MENU.site, remote.site || {}),
+      food: Array.isArray(remote.food) ? remote.food : LOCAL_MENU.food,
+      drinks: Array.isArray(remote.drinks) ? remote.drinks : LOCAL_MENU.drinks
+    };
+  }
+
   // --- Renderizar carta desde datos ---
-  function renderMenuGrid(container, categories, type) {
-    if (!container || !window.RESTAURANT_MENU) return;
+  function renderMenuGrid(container, categories, type, instant) {
+    if (!container || !Array.isArray(categories)) return;
     var t = type || 'food';
+    var revealClass = instant ? 'reveal is-visible' : 'reveal';
     container.innerHTML = categories.map(function (cat) {
-      var count = cat.items.length;
+      var count = (cat.items || []).length;
       var label = t === 'drinks' ? (count === 1 ? 'opción' : 'opciones') : (count === 1 ? 'plato' : 'platos');
       return (
-        '<article class="menu-card reveal" data-category-id="' + escapeHtml(cat.id) + '" data-category-type="' + t + '" tabindex="0" role="button">' +
+        '<article class="menu-card ' + revealClass + '" data-category-id="' + escapeHtml(cat.id) + '" data-category-type="' + t + '" tabindex="0" role="button">' +
           '<div class="menu-card-image">' +
             '<img src="' + escapeHtml(cat.image) + '" alt="' + escapeHtml(cat.name) + '" loading="lazy">' +
             '<div class="menu-card-overlay">' +
@@ -54,10 +77,45 @@
     return div.innerHTML;
   }
 
-  function initMenu() {
-    if (typeof RESTAURANT_MENU === 'undefined') return;
-    renderMenuGrid(DOM.menuComidaGrid, RESTAURANT_MENU.food, 'food');
-    renderMenuGrid(DOM.menuBebidasGrid, RESTAURANT_MENU.drinks, 'drinks');
+  /** Los textos editables admiten saltos de línea y **negrita**. */
+  function richText(value) {
+    return escapeHtml(value)
+      .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+      .replace(/\n/g, '<br>');
+  }
+
+  function isSafeUrl(value) {
+    return /^(https?:\/\/|mailto:|tel:|\/|\.\/|#)/i.test(value);
+  }
+
+  // --- Textos e información de contacto ---
+  function applySite(site) {
+    if (!site) return;
+
+    document.querySelectorAll('[data-site]').forEach(function (el) {
+      var value = site[el.getAttribute('data-site')];
+      if (typeof value === 'string' && value.trim()) el.innerHTML = richText(value);
+    });
+
+    document.querySelectorAll('[data-site-href]').forEach(function (el) {
+      var value = site[el.getAttribute('data-site-href')];
+      if (value && isSafeUrl(value)) el.setAttribute('href', value);
+    });
+
+    document.querySelectorAll('[data-site-tel]').forEach(function (el) {
+      var value = site[el.getAttribute('data-site-tel')];
+      if (value) el.setAttribute('href', 'tel:' + value.replace(/[^\d+]/g, ''));
+    });
+
+    document.querySelectorAll('[data-site-mailto]').forEach(function (el) {
+      var value = site[el.getAttribute('data-site-mailto')];
+      if (value) el.setAttribute('href', 'mailto:' + value.trim());
+    });
+  }
+
+  function renderMenu(instant) {
+    renderMenuGrid(DOM.menuComidaGrid, MENU.food, 'food', instant);
+    renderMenuGrid(DOM.menuBebidasGrid, MENU.drinks, 'drinks', instant);
     bindMenuCards();
   }
 
@@ -77,9 +135,9 @@
   function openDrawerFromCard() {
     var id = this.getAttribute('data-category-id');
     var type = this.getAttribute('data-category-type');
-    var list = type === 'drinks' ? RESTAURANT_MENU.drinks : RESTAURANT_MENU.food;
-    var cat = list.find(function (c) { return c.id === id; });
-    if (cat) openDrawer(cat.name, cat.items);
+    var list = type === 'drinks' ? MENU.drinks : MENU.food;
+    var cat = (list || []).find(function (c) { return c.id === id; });
+    if (cat) openDrawer(cat.name, cat.items || []);
   }
 
   function openDrawer(categoryName, items) {
@@ -178,30 +236,50 @@
   });
 
   // --- Scroll reveal ---
-  function initReveal() {
-    const els = document.querySelectorAll('.reveal');
+  var revealObserver = null;
+
+  function observeReveals() {
+    const els = document.querySelectorAll('.reveal:not(.is-visible)');
     if (!els.length) return;
 
-    const observer = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-          }
-        });
-      },
-      { rootMargin: '0px 0px -40px 0px', threshold: 0.1 }
-    );
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(function (el) { el.classList.add('is-visible'); });
+      return;
+    }
+
+    if (!revealObserver) {
+      revealObserver = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { rootMargin: '0px 0px -40px 0px', threshold: 0.1 }
+      );
+    }
 
     els.forEach(function (el) {
-      observer.observe(el);
+      revealObserver.observe(el);
     });
   }
 
   // --- Inicio ---
   function init() {
-    initMenu();
-    initReveal();
+    applySite(MENU.site);
+    renderMenu(false);
+    observeReveals();
+
+    fetchRemoteMenu().then(function (remote) {
+      if (!remote) return;
+      MENU = mergeMenu(remote);
+      applySite(MENU.site);
+      // Sin animación: el contenido ya estaba pintado con la copia local.
+      renderMenu(true);
+      observeReveals();
+    });
   }
 
   if (document.readyState === 'loading') {

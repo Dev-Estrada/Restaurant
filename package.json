@@ -1,0 +1,13 @@
+{
+  "name": "sidreria-el-pasaje",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Web de la Sidrería El Pasaje con panel de administración de la carta",
+  "type": "module",
+  "scripts": {
+    "dev": "vercel dev"
+  },
+  "dependencies": {
+    "@vercel/blob": "^2.7.0"
+  }
+}

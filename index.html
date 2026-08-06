@@ -56,9 +56,9 @@
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <img src="./img/Sidreria.png" alt="Sidrería El Pasaje" class="hero-logo">
-        <p class="hero-tagline">Sidrería Tradicional Asturiana</p>
-        <p class="hero-desc">Sabores auténticos de Asturias en el corazón de Gijón</p>
-        <a href="#menu" class="hero-cta">Ver nuestra carta</a>
+        <p class="hero-tagline" data-site="heroTagline">Sidrería Asturiana</p>
+        <p class="hero-desc" data-site="heroDesc">Sabores auténticos de Asturias en el corazón de Gijón</p>
+        <a href="#menu" class="hero-cta" data-site="heroCta">Ver nuestra carta</a>
       </div>
       <div class="hero-scroll" aria-hidden="true">
         <span>Desliza</span>
@@ -74,8 +74,8 @@
           <div class="section-line"></div>
         </div>
         <div class="about-text reveal">
-          <p>En <strong>El Pasaje</strong>, llevamos la tradición asturiana a tu mesa desde hace generaciones. Nuestra sidrería es un homenaje a la gastronomía de Asturias, donde cada plato cuenta una historia y cada escanciado de sidra es un arte.</p>
-          <p>Ubicados en Gijón, nos enorgullece ofrecer los mejores productos locales: desde nuestro famoso cachopo hasta la sidra natural que fluye de las mejores pomaradas asturianas. Nuestro compromiso es con la calidad, la autenticidad y la hospitalidad que nos caracteriza.</p>
+          <p data-site="aboutText1">En <strong>El Pasaje</strong>, llevamos la tradición asturiana a tu mesa desde hace generaciones. Nuestra sidrería es un homenaje a la gastronomía de Asturias, donde cada plato cuenta una historia y cada escanciado de sidra es un arte.</p>
+          <p data-site="aboutText2">Ubicados en Gijón, nos enorgullece ofrecer los mejores productos locales: desde nuestro famoso cachopo hasta la sidra natural que fluye de las mejores pomaradas asturianas. Nuestro compromiso es con la calidad, la autenticidad y la hospitalidad que nos caracteriza.</p>
         </div>
         <div class="about-cards">
           <article class="about-card reveal">
@@ -103,7 +103,7 @@
         <div class="section-head">
           <h2 class="section-title">Nuestra carta</h2>
           <div class="section-line"></div>
-          <p class="section-desc">Descubre nuestros platos y bebidas cuidadosamente seleccionados</p>
+          <p class="section-desc" data-site="menuIntro">Descubre nuestros platos y bebidas cuidadosamente seleccionados</p>
         </div>
 
         <div class="menu-tabs" role="tablist">
@@ -148,14 +148,14 @@
           <div class="location-card reveal">
             <div class="location-icon"><i class="fas fa-map-marker-alt"></i></div>
             <h3>Dirección</h3>
-            <p>Sidrería Restaurante El Pasaje<br>C. Eleuterio Quintanilla, 68<br>Gijón, Asturias, España</p>
-            <a href="https://www.google.com/maps?q=Sidrer%C3%ADa+Restaurante+el+Pasaje,+C.+Eleuterio+Quintanilla,+68,+Centro,+33208+Gij%C3%B3n,+Asturias&ftid=0xd367c8c711e21f1:0x4618a3ceb9900005&entry=gps" target="_blank" rel="noopener" class="link-arrow">Cómo llegar <i class="fas fa-external-link-alt"></i></a>
+            <p data-site="addressLines">Sidrería Restaurante El Pasaje<br>C. Eleuterio Quintanilla, 68<br>Gijón, Asturias, España</p>
+            <a href="https://www.google.com/maps?q=Sidrer%C3%ADa+Restaurante+el+Pasaje,+C.+Eleuterio+Quintanilla,+68,+Centro,+33208+Gij%C3%B3n,+Asturias&ftid=0xd367c8c711e21f1:0x4618a3ceb9900005&entry=gps" target="_blank" rel="noopener" class="link-arrow" data-site-href="mapsUrl">Cómo llegar <i class="fas fa-external-link-alt"></i></a>
           </div>
           <div class="location-card reveal">
             <div class="location-icon"><i class="fas fa-clock"></i></div>
             <h3>Horario</h3>
-            <p><strong>Lunes a Sábados:</strong> 11:00 – 17:00 / 19:30 – Cierre<br><strong>Sábados:</strong> 12:00 – 17:00 / 20:00 – Cierre<br><strong>Miércoles:</strong> Cerrado por descanso</p>
-            <span class="location-note">Reservas recomendadas</span>
+            <p data-site="hoursLines"><strong>Lunes a Viernes:</strong> 11:00 – 17:00 / 19:30 – Cierre<br><strong>Sábados:</strong> 12:00 – 17:00 / 20:00 – Cierre<br><strong>Miércoles:</strong> Cerrado por descanso</p>
+            <span class="location-note" data-site="hoursNote">Reservas recomendadas</span>
           </div>
         </div>
         <div class="map-wrap reveal">
@@ -173,17 +173,17 @@
           <p class="section-desc">Estamos aquí para atenderte</p>
         </div>
         <div class="contact-grid">
-          <a href="tel:+34684688094" class="contact-card reveal">
+          <a href="tel:+34684688094" class="contact-card reveal" data-site-tel="phone">
             <i class="fas fa-phone"></i>
             <h3>Teléfono</h3>
-            <span>+34 684 68 80 94</span>
+            <span data-site="phone">+34 684 68 80 94</span>
           </a>
-          <a href="mailto:info@elpasaje.es" class="contact-card reveal">
+          <a href="mailto:info@elpasaje.es" class="contact-card reveal" data-site-mailto="email">
             <i class="fas fa-envelope"></i>
             <h3>Email</h3>
-            <span>info@elpasaje.es</span>
+            <span data-site="email">info@elpasaje.es</span>
           </a>
-          <a href="tel:+34684688094" class="contact-card reveal">
+          <a href="tel:+34684688094" class="contact-card reveal" data-site-tel="phone">
             <i class="fas fa-calendar-alt"></i>
             <h3>Reservas</h3>
             <span>Llamar para reservar</span>
@@ -202,7 +202,7 @@
             <i class="fas fa-wine-bottle"></i>
             <span>El Pasaje</span>
           </div>
-          <p>Auténtica sidrería asturiana en Gijón, donde la tradición y el sabor se encuentran.</p>
+          <p data-site="footerAbout">Auténtica sidrería asturiana en Gijón, donde la tradición y el sabor se encuentran.</p>
         </div>
         <div class="footer-links">
           <h4>Enlaces</h4>
@@ -214,10 +214,10 @@
         <div class="footer-social">
           <h4>Síguenos</h4>
           <div class="social-links">
-            <a href="https://www.facebook.com/share/1A3L7pxWC8/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/sid.rest_elpasaje/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/share/1A3L7pxWC8/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook" data-site-href="facebookUrl"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/sid.rest_elpasaje/" target="_blank" rel="noopener" aria-label="Instagram" data-site-href="instagramUrl"><i class="fab fa-instagram"></i></a>
           </div>
-          <p class="footer-phone"><i class="fas fa-phone"></i> +34 684 68 80 94</p>
+          <p class="footer-phone"><i class="fas fa-phone"></i> <span data-site="phone">+34 684 68 80 94</span></p>
         </div>
       </div>
       <div class="footer-bottom">
