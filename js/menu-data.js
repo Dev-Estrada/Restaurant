@@ -13,6 +13,7 @@ const RESTAURANT_MENU = {
     aboutText1: 'En **El Pasaje**, llevamos la tradición asturiana a tu mesa desde hace generaciones. Nuestra sidrería es un homenaje a la gastronomía de Asturias, donde cada plato cuenta una historia y cada escanciado de sidra es un arte.',
     aboutText2: 'Ubicados en Gijón, nos enorgullece ofrecer los mejores productos locales: desde nuestro famoso cachopo hasta la sidra natural que fluye de las mejores pomaradas asturianas. Nuestro compromiso es con la calidad, la autenticidad y la hospitalidad que nos caracteriza.',
     menuIntro: 'Descubre nuestros platos y bebidas cuidadosamente seleccionados',
+    allergensNote: 'Si tienes alguna alergia o intolerancia, avísanos antes de pedir: te indicaremos qué alérgenos contiene cada plato y qué alternativas tenemos.',
     addressLines: 'Sidrería Restaurante El Pasaje\nC. Eleuterio Quintanilla, 68\nGijón, Asturias, España',
     mapsUrl: 'https://www.google.com/maps?q=Sidrer%C3%ADa+Restaurante+el+Pasaje,+C.+Eleuterio+Quintanilla,+68,+Centro,+33208+Gij%C3%B3n,+Asturias&ftid=0xd367c8c711e21f1:0x4618a3ceb9900005&entry=gps',
     hoursLines: '**Lunes a Viernes:** 11:00 – 17:00 / 19:30 – Cierre\n**Sábados:** 12:00 – 17:00 / 20:00 – Cierre\n**Miércoles:** Cerrado por descanso',

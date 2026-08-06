@@ -30,7 +30,8 @@
     {
       title: 'Carta',
       fields: [
-        { key: 'menuIntro', label: 'Texto bajo el título de la carta' }
+        { key: 'menuIntro', label: 'Texto bajo el título de la carta' },
+        { key: 'allergensNote', label: 'Aviso sobre alérgenos', multiline: true, hint: 'Los 14 iconos de alérgenos son fijos por normativa; aquí solo se cambia el texto que los acompaña.' }
       ]
     },
     {

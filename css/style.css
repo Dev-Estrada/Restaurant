@@ -687,6 +687,101 @@ a {
   color: var(--color-muted);
 }
 
+/* ----- Alérgenos ----- */
+.allergens {
+  margin-top: var(--space-3xl);
+  padding-top: var(--space-2xl);
+  border-top: 1px solid rgba(28, 25, 23, 0.1);
+}
+
+.allergens-head {
+  text-align: center;
+}
+
+.allergens-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 3vw, 1.6rem);
+  font-weight: 600;
+  margin: 0 0 var(--space-sm);
+}
+
+.allergens-note {
+  max-width: 62ch;
+  margin: 0 auto;
+  font-size: 0.95rem;
+  color: var(--color-muted);
+}
+
+.allergen-grid {
+  list-style: none;
+  margin: var(--space-xl) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-lg) var(--space-md);
+}
+
+.allergen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-sm);
+}
+
+.allergen-icon {
+  width: 60px;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-full);
+  background: var(--allergen-color);
+  color: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.allergen-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.allergen-name {
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-dark-soft);
+}
+
+.allergen-gluten { --allergen-color: #d97706; }
+.allergen-crustaceos { --allergen-color: #be123c; }
+.allergen-huevos { --allergen-color: #b45309; }
+.allergen-pescado { --allergen-color: #0e7490; }
+.allergen-cacahuetes { --allergen-color: #92400e; }
+.allergen-soja { --allergen-color: #4d7c0f; }
+.allergen-lacteos { --allergen-color: #6d28d9; }
+.allergen-frutos { --allergen-color: #7c2d12; }
+.allergen-apio { --allergen-color: #15803d; }
+.allergen-mostaza { --allergen-color: #a16207; }
+.allergen-sesamo { --allergen-color: #78716c; }
+.allergen-sulfitos { --allergen-color: #1d4ed8; }
+.allergen-moluscos { --allergen-color: #44403c; }
+.allergen-altramuces { --allergen-color: #0f766e; }
+
+@media (min-width: 480px) {
+  .allergen-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+@media (min-width: 640px) {
+  .allergen-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
+
+@media (min-width: 900px) {
+  .allergen-grid { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+  .allergen-name { font-size: 0.75rem; }
+}
+
 /* ----- Drawer ----- */
 .drawer {
   position: fixed;
